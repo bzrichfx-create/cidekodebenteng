@@ -71,18 +71,12 @@ export const GALLERY = [
   { src: 'https://d64gsuwffb70l.cloudfront.net/6a27d4ff7d4f94dffb7ecf25_1780995749304_1f978fee.jpg', title: 'Makrab CIKOD' },
 ];
 
-// Two representative placeholder portraits in traditional Chinese formal attire.
-// These are placeholders only and can be replaced later via CMS/Admin Panel.
-const MALE_PHOTO = 'https://d64gsuwffb70l.cloudfront.net/6a27d4ff7d4f94dffb7ecf25_1781107869179_725b69d7.jpg';
-const FEMALE_PHOTO = 'https://d64gsuwffb70l.cloudfront.net/6a27d4ff7d4f94dffb7ecf25_1781107889375_3e3e6a3c.png';
-
 // ============================================================
 // SUSUNAN KEPENGURUSAN — 3 ORGANISASI (TAB)
-// Foto Dewan Kehormatan, Pendiri, Dewan Pembina & Dewan Pengawas
-// sengaja tidak ditampilkan (showPhoto:false).
+// Semua foto tidak ditampilkan, hanya nama dan jabatan.
 // ============================================================
 
-type RawMember = { name: string; role?: string; gender: 'M' | 'F'; noPhoto?: boolean };
+type RawMember = { name: string; role?: string; gender: 'M' | 'F' };
 type RawGroup = { group: string; members: RawMember[] };
 
 const withPhoto = (groups: RawGroup[]) =>
@@ -92,8 +86,8 @@ const withPhoto = (groups: RawGroup[]) =>
       name: m.name,
       role: m.role ?? g.group,
       gender: m.gender,
-      showPhoto: !m.noPhoto,
-      photo: m.gender === 'M' ? MALE_PHOTO : FEMALE_PHOTO,
+      showPhoto: false,
+      photo: '',
     })),
   }));
 
@@ -102,35 +96,35 @@ const YAYASAN: RawGroup[] = [
   {
     group: 'Dewan Kehormatan',
     members: [
-      { name: 'Dra. Sri Rochani Soesetio Karim', gender: 'F', noPhoto: true },
-      { name: 'Hanny', gender: 'F', noPhoto: true },
-      { name: 'Hendra, S.E., M.M. / Achonk Lim', gender: 'M', noPhoto: true },
-      { name: 'Prof. Dr. Drs. Po Abas Sunarya, M.Si.', gender: 'M', noPhoto: true },
-      { name: 'Sulianta', gender: 'M', noPhoto: true },
-      { name: 'S. Surjadi Handjaja', gender: 'M', noPhoto: true },
-      { name: 'Sutedja Budiman', gender: 'M', noPhoto: true },
-      { name: 'Soffian Sunarya, S.E.', gender: 'M', noPhoto: true },
-      { name: 'Yenny Setia Widjaja', gender: 'F', noPhoto: true },
+      { name: 'Dra. Sri Rochani Soesetio Karim', gender: 'F' },
+      { name: 'Hanny', gender: 'F' },
+      { name: 'Hendra, S.E., M.M. / Achonk Lim', gender: 'M' },
+      { name: 'Prof. Dr. Drs. Po Abas Sunarya, M.Si.', gender: 'M' },
+      { name: 'Sulianta', gender: 'M' },
+      { name: 'S. Surjadi Handjaja', gender: 'M' },
+      { name: 'Sutedja Budiman', gender: 'M' },
+      { name: 'Soffian Sunarya, S.E.', gender: 'M' },
+      { name: 'Yenny Setia Widjaja', gender: 'F' },
     ],
   },
   {
     group: 'Pendiri',
-    members: [{ name: 'Rika Lenawaty, S.T.', gender: 'F', noPhoto: true }],
+    members: [{ name: 'Rika Lenawaty, S.T.', gender: 'F' }],
   },
   {
     group: 'Dewan Pembina',
     members: [
-      { name: 'Rika Lenawaty, S.T.', role: 'Ketua Dewan Pembina', gender: 'F', noPhoto: true },
-      { name: 'Indra Lesmana Teja, S.Kom.', gender: 'M', noPhoto: true },
-      { name: 'Ratna Juni Asih', gender: 'F', noPhoto: true },
+      { name: 'Rika Lenawaty, S.T.', role: 'Ketua Dewan Pembina', gender: 'F' },
+      { name: 'Indra Lesmana Teja, S.Kom.', gender: 'M' },
+      { name: 'Ratna Juni Asih', gender: 'F' },
     ],
   },
   {
     group: 'Dewan Pengawas',
     members: [
-      { name: 'dr. Surianna Sugianto', role: 'Ketua Dewan Pengawas', gender: 'F', noPhoto: true },
-      { name: 'Glenardi Widjaja, S.Kom.', gender: 'M', noPhoto: true },
-      { name: 'Luckie Sugianto, S.T.', gender: 'F', noPhoto: true },
+      { name: 'dr. Surianna Sugianto', role: 'Ketua Dewan Pengawas', gender: 'F' },
+      { name: 'Glenardi Widjaja, S.Kom.', gender: 'M' },
+      { name: 'Luckie Sugianto, S.T.', gender: 'F' },
     ],
   },
   {
