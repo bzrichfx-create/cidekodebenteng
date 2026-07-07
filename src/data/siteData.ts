@@ -437,6 +437,10 @@ const PHOTOS_2019 = [
 ].map(drive);
 
 // Foto Angkatan 2020 (urut sesuai daftar nama).
+// Placeholder photos for members without photos
+const MALE_PHOTO = 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400';
+const FEMALE_PHOTO = 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400';
+
 const PHOTOS_2020 = [
   '1hEzUjxboLF09rGMrRmJsmaTcezqulS14', '1z5e7DZCm6qW25sg17np-UZtsZBZkL_Cl',
   '1SmV-44pwrlxkgQHi57NDH3wwLiM7v8gK', '14rmAl-p2-hFkxhHpcL2G64TKzXQwTRjF',
