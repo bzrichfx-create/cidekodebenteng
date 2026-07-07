@@ -7,6 +7,21 @@ const TABS = ['Semua', ...ANGKATAN_LIST];
 
 type Anggota = (typeof ANGGOTA_MEMBERS)[number];
 
+function MemberInitials({ name }: { name: string }) {
+  const initials = name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0])
+    .join('')
+    .toUpperCase();
+  return (
+    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#5A3E2B] to-[#3d2a1c]">
+      <span className="font-serif text-4xl font-bold text-[#F5B335]">{initials}</span>
+    </div>
+  );
+}
+
 export default function Membership() {
   const [filter, setFilter] = useState('Semua');
   const [query, setQuery] = useState('');
@@ -69,12 +84,16 @@ export default function Membership() {
                   className="group w-full text-left bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 h-full flex flex-col"
                 >
                   <div className="relative overflow-hidden aspect-[4/5] bg-[#f5ede0]">
-                    <img
-                      src={m.photo}
-                      alt={m.name}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    {m.hasPhoto ? (
+                      <img
+                        src={m.photo}
+                        alt={m.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                    ) : (
+                      <MemberInitials name={m.name} />
+                    )}
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#111]/60 to-transparent" />
                   </div>
                   <div className="p-4 text-center flex flex-col flex-1">
@@ -94,8 +113,12 @@ export default function Membership() {
       {detail && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setDetail(null)}>
           <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="relative">
-              <img src={detail.photo} alt={detail.name} className="w-full h-72 object-cover" />
+            <div className="relative h-72">
+              {detail.hasPhoto ? (
+                <img src={detail.photo} alt={detail.name} className="w-full h-full object-cover" />
+              ) : (
+                <MemberInitials name={detail.name} />
+              )}
               <button onClick={() => setDetail(null)} className="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 flex items-center justify-center hover:bg-[#F5B335]"><X size={18} /></button>
             </div>
             <div className="p-6 text-center">

@@ -460,11 +460,13 @@ const buildAngkatan = (members: RawAnggota[], angkatan: string, photos: string[]
     const isFemale = m.gender
       ? m.gender === 'F'
       : m.name.trim().toLowerCase().startsWith('cide');
+    const hasPhoto = !!photos[i];
     return {
       name: m.name,
       gelar: m.gelar,
       angkatan,
-      photo: photos[i] || (isFemale ? FEMALE_PHOTO : MALE_PHOTO),
+      photo: hasPhoto ? photos[i] : '',
+      hasPhoto,
     };
   });
 
