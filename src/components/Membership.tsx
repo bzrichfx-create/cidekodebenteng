@@ -113,9 +113,9 @@ export default function Membership() {
       {detail && (
         <div className="fixed inset-0 z-[100] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4" onClick={() => setDetail(null)}>
           <div className="bg-white rounded-3xl max-w-md w-full overflow-hidden" onClick={(e) => e.stopPropagation()}>
-            <div className="relative h-72">
+            <div className="relative aspect-[4/5] bg-[#f5ede0]">
               {detail.hasPhoto ? (
-                <img src={detail.photo} alt={detail.name} className="w-full h-full object-cover" />
+                <img src={detail.photo} alt={detail.name} className="w-full h-full object-contain" />
               ) : (
                 <MemberInitials name={detail.name} />
               )}
