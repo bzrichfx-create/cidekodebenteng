@@ -52,7 +52,7 @@ export default function Footer() {
           <h3 className="font-serif font-bold text-[#F5B335] mb-5">Kontak</h3>
           <ul className="space-y-3 text-sm text-white/60">
             <li className="flex gap-2.5"><MapPin size={16} className="text-[#F5B335] flex-shrink-0 mt-0.5" /> Jl. Imam Bonjol No. 46, Karawaci, Tangerang, Banten 15113</li>
-            <li className="flex gap-2.5"><Phone size={16} className="text-[#F5B335] flex-shrink-0 mt-0.5" /> +62 852 1789 5656</li>
+            <li className="flex gap-2.5"><Phone size={16} className="text-[#F5B335] flex-shrink-0 mt-0.5" /> +62 852 8652 6886</li>
             <li className="flex gap-2.5"><Mail size={16} className="text-[#F5B335] flex-shrink-0 mt-0.5" /> cidekodebenteng@gmail.com</li>
           </ul>
         </div>

@@ -624,4 +624,4 @@ export const PARTNER_CATEGORIES = [
   },
 ];
 
-export const WHATSAPP = '6285217895656';
+export const WHATSAPP = '6285286526886';

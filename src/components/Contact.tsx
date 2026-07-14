@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Phone, Mail, Send, CheckCircle, Building2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Send, CircleCheck as CheckCircle, Building2 } from 'lucide-react';
 import { WHATSAPP } from '@/data/siteData';
 import { supabase } from '@/lib/supabase';
 import Reveal from './Reveal';
@@ -74,7 +74,7 @@ export default function Contact() {
             <div className="grid sm:grid-cols-2 gap-5">
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noreferrer" className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex gap-4 hover:border-[#F5B335] transition">
                 <div className="w-11 h-11 rounded-xl bg-[#5A3E2B] flex items-center justify-center flex-shrink-0"><Phone className="text-[#F5B335]" size={20} /></div>
-                <div><h3 className="font-bold text-[#111] mb-1 text-sm">WhatsApp</h3><p className="text-sm text-gray-600">+62 852 1789 5656</p></div>
+                <div><h3 className="font-bold text-[#111] mb-1 text-sm">WhatsApp</h3><p className="text-sm text-gray-600">+62 852 8652 6886</p></div>
               </a>
               <a href="mailto:cidekodebenteng@gmail.com" className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 flex gap-4 hover:border-[#F5B335] transition">
                 <div className="w-11 h-11 rounded-xl bg-[#5A3E2B] flex items-center justify-center flex-shrink-0"><Mail className="text-[#F5B335]" size={20} /></div>
